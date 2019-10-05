@@ -1,0 +1,20 @@
+.gradle
+/build/
+.idea
+*.iml
+*.ipr
+**/build/
+*.log
+*.swp
+
+### IntelliJ IDEA ###
+.idea
+*.iws
+*.iml
+*.ipr
+**/out/*
+
+gradle-app.setting
+!gradle-wrapper.jar
+.gradletasknamecache
+
