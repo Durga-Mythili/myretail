@@ -1,0 +1,16 @@
+spring:
+  main:
+    banner-mode: 'off'
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+  data.mongodb:
+    database: retail # Database name.
+    uri: mongodb://mongo:27017
+
+server:
+  port: 9898
+
+redsky:
+  url: 'https://redsky.target.com/v2/pdp/tcin/'
+  query: '?excludes=taxonomy,price,promotion,bulk_ship,rating_and_review_reviews,rating_and_review_statistics,question_answer_statistics'
+
