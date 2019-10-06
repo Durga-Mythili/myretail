@@ -1,0 +1,18 @@
+plugins {
+    id 'groovy'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile project(":my-retail-common")
+    compileOnly "org.projectlombok:lombok:${lombokVersion}"
+    annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
+
+    compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
+    compile "javax.validation:validation-api:1.1.0.Final"
+    testCompile "org.spockframework:spock-core:${spockVersion}"
+
+}
