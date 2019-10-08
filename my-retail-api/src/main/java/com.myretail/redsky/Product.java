@@ -8,7 +8,7 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Product {
     @JsonProperty("available_to_promise_network")
-    private AvailableToPromiseNetwork availableToPromiseNetwork;
+    private ProductAvailability productAvailability;
     private Item item;
 
 }

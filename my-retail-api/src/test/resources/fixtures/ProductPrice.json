@@ -2,7 +2,7 @@
   "id" : 101204,
   "name" : "pink piggy bank girl's toy",
   "current_price" : {
-    "value" : 23.00,
+    "value" : 23.0,
     "currency_code": "USD"
   }
 }

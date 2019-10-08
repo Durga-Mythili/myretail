@@ -1,16 +1,37 @@
 buildscript {
     repositories {
         mavenLocal()
-        maven { url "https://plugins.gradle.org/m2/" }
         mavenCentral()
     }
+}
+repositories {
+    mavenLocal()
+    mavenCentral()
+}
+apply plugin: 'codenarc'
+apply plugin: 'groovy'
 
-    dependencies {
-        classpath "com.diffplug.spotless:spotless-plugin-gradle:3.23.1"
+
+dependencies {
+    codenarc "org.codenarc:CodeNarc:0.24"
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
+}
+
+codenarc {
+    ignoreFailures = true
+    reportFormat = 'html'
+    reportsDir = new File("build/reports/codenarc")
+}
+
+def codenarcMainFile = rootProject.file('config/codenarc/ruleset.groovy')
+def codenarcTestFile = rootProject.file('config/codenarc/ruleset.groovy')
+
+project.sourceSets*.name.each { sourceSet ->
+    project."codenarc${sourceSet.capitalize()}" {
+        configFile sourceSet.toLowerCase().contains('test') ? codenarcTestFile : codenarcMainFile
     }
 }
 
 subprojects {
     group 'com.myretail'
-    apply plugin: "com.diffplug.gradle.spotless"
 }

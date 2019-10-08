@@ -19,13 +19,11 @@ class RedskyClient {
 
     RedSkyProduct productDetails(int productId) {
         URI uri = URI.create("${appConfig.redsky.url}${productId}${appConfig.redsky.query}")
-        println(uri)
-        RedSkyProduct redSkyProduct
+        RedSkyProduct redSkyProduct = null
        try {
          redSkyProduct =  restTemplate.getForObject(uri, RedSkyProduct)
        } catch (HttpClientErrorException e) {
-           // print errors
-        redSkyProduct = null
+           throw new Exception()
        }
         return redSkyProduct
     }

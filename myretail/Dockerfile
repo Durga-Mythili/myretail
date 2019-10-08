@@ -1,7 +1,6 @@
 FROM java:openjdk-8-alpine
-ADD my-retail-0.0.1-SNAPSHOT.jar build/libs/my-retail-0.0.1-SNAPSHOT.jar
+ENV MONGO_URL mongodb://localhost/retail_service
 EXPOSE 9898
-ENV MONGODB_DB_NAME retail
-ENV MONGODB_DB_HOST mongo
-ENV MONGODB_DB_PORT 27017
-ENTRYPOINT ["java", "-jar", "build/libs/my-retail-0.0.1-SNAPSHOT.jar"]
+RUN mkdir -p /app/
+ADD build/libs/myretail-0.0.1-SNAPSHOT.jar /app/myretail.jar
+ENTRYPOINT ["java", "-jar", "/app/myretail.jar"]

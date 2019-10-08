@@ -1,0 +1,13 @@
+{
+  "product": {
+    "item" : {
+      "product_description" : {
+        "title" : "pink piggy bank girl's toy"
+      }
+    },
+    "available_to_promise_network" : {
+      "product_id" : "12345"
+
+    }
+  }
+}
