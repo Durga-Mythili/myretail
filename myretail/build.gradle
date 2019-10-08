@@ -2,6 +2,7 @@ plugins {
     id 'org.springframework.boot' version '2.1.9.RELEASE'
     id 'io.spring.dependency-management' version '1.0.8.RELEASE'
     id 'groovy'
+    id 'codenarc'
 }
 
 group = 'com.myretail'
@@ -26,6 +27,9 @@ dependencies {
     testImplementation 'io.projectreactor:reactor-test'
     compileOnly "org.springframework.boot:spring-boot-configuration-processor"
     implementation 'org.codehaus.groovy:groovy'
+    // https://mvnrepository.com/artifact/io.reactivex.rxjava2/rxjava
+    compile group: 'io.reactivex.rxjava2', name: 'rxjava', version: '2.2.6'
+
 
     // retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.1.0'

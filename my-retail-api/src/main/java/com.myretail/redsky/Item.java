@@ -8,6 +8,6 @@ import lombok.Data;
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class Item {
     @JsonProperty("product_description")
-    private ProductDescription productDescription;
+    private ProductDescription description;
 }
 

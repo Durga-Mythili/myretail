@@ -3,9 +3,11 @@ spring:
     banner-mode: 'off'
   jackson:
     property-naming-strategy: SNAKE_CASE
-  data.mongodb:
-    database: retail # Database name.
-    uri: mongodb://mongo:27017
+  data:
+    mongodb:
+     # uri: 'mongodb://localhost/myretail'
+      host: localhost
+      database: myretail
 
 server:
   port: 9898

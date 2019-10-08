@@ -1,9 +1,8 @@
 package com.myretail
 
+import com.google.common.io.Resources
 import spock.lang.Specification
 import com.fasterxml.jackson.databind.ObjectMapper
-
-import javax.annotation.Resources
 
 class JsonSpecification extends Specification {
     static final ObjectMapper objectMapper = new ObjectMapperBuilder().build()
@@ -20,18 +19,14 @@ class JsonSpecification extends Specification {
     static String jsonFromResource(String resourcePath) {
         InputStream inputStream = Resources.getResource(resourcePath)?.openStream()
         if (inputStream) {
-            return stripWhiteSpace(inputStream.text)
+            StringBuffer objContent = new StringBuffer()
+            inputStream.eachLine {
+                objContent << it.replaceFirst(/": /, '":')
+                        .replaceFirst(/" : /, '":')
+                        .trim()
+            }
+            return objContent.toString()
         }
         throw new FileNotFoundException(resourcePath)
     }
-
-    private static String stripWhiteSpace(String str) {
-        StringBuffer out = new StringBuffer()
-        str.eachLine {
-            out << it.replaceFirst(/": /, '":').replaceFirst(/" : /, '":').trim()
-        }
-        return out.toString()
-    }
-
-
 }

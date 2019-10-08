@@ -6,7 +6,7 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
- public class AvailableToPromiseNetwork {
+ public class ProductAvailability {
     @JsonProperty("product_id")
-    private String productId;
+    private String id;
 }
