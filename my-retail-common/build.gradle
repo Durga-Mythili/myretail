@@ -8,15 +8,12 @@ repositories {
 }
 
 dependencies {
-    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    compile "org.codehaus.groovy:groovy-all:${groovyVersion}"
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-
     compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
-    compile "javax.validation:validation-api:1.1.0.Final"
     testCompile "org.spockframework:spock-core:${spockVersion}"
     compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
     compile "com.fasterxml.jackson.core:jackson-databind:${jacksonVersion}"
     compile "com.fasterxml.jackson.datatype:jackson-datatype-jsr310:${jacksonVersion}"
-
 }

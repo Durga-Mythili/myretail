@@ -8,7 +8,7 @@ import com.myretail.redsky.Product
 import com.myretail.redsky.ProductAvailability
 import com.myretail.redsky.ProductDescription
 import com.myretail.redsky.RedSkyProduct
-import com.myretail.repository.CurrentProdutPriceRepository
+import com.myretail.repository.CurrentProductPriceRepository
 import com.myretail.repository.CustomProductPriceRepoImpl
 import com.myretail.util.CurrencyCode
 import spock.lang.Specification
@@ -16,7 +16,7 @@ import spock.lang.Specification
 class MyRetailServiceSpec extends Specification {
 
     RedskyClient redskyClient
-    CurrentProdutPriceRepository productPriceRepository
+    CurrentProductPriceRepository productPriceRepository
 
     RedSkyProduct redSkyProduct
 

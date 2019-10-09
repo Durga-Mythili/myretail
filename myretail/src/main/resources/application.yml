@@ -5,9 +5,11 @@ spring:
     property-naming-strategy: SNAKE_CASE
   data:
     mongodb:
-     # uri: 'mongodb://localhost/myretail'
       host: localhost
       database: myretail
+      username: myRetail
+      password: password
+      authentication-database: admin
 
 server:
   port: 9898

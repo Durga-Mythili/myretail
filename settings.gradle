@@ -2,5 +2,4 @@ rootProject.name = 'myRetail'
 include 'myretail',
         'my-retail-api',
         'my-retail-common'
-include 'myretail'
 
