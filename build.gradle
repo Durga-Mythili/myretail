@@ -23,15 +23,6 @@ codenarc {
     reportsDir = new File("build/reports/codenarc")
 }
 
-def codenarcMainFile = rootProject.file('config/codenarc/ruleset.groovy')
-def codenarcTestFile = rootProject.file('config/codenarc/ruleset.groovy')
-
-project.sourceSets*.name.each { sourceSet ->
-    project."codenarc${sourceSet.capitalize()}" {
-        configFile sourceSet.toLowerCase().contains('test') ? codenarcTestFile : codenarcMainFile
-    }
-}
-
 subprojects {
     group 'com.myretail'
 }

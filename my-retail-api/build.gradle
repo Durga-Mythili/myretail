@@ -11,12 +11,9 @@ dependencies {
     compile project(":my-retail-common")
     compileOnly "org.projectlombok:lombok:${lombokVersion}"
     annotationProcessor "org.projectlombok:lombok:${lombokVersion}"
-    // https://mvnrepository.com/artifact/com.google.guava/guava
-    compile group: 'com.google.guava', name: 'guava', version: '27.1-jre'
-
-
+    compile "com.google.guava:guava:${guavaVersion}"
+    
     compile "com.fasterxml.jackson.core:jackson-annotations:${jacksonVersion}"
-    compile "javax.validation:validation-api:1.1.0.Final"
     testCompile "org.spockframework:spock-core:${spockVersion}"
 
 }
